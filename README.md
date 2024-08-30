@@ -6,5 +6,8 @@
 機能
 ## chapter02
 苦労した点
+private ではなく public で
+save を忘れない
 ## chapter03
-特徴
+裏技
+git remote remove origin 
