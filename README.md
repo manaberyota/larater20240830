@@ -1,7 +1,8 @@
 <!-- readme.md -->
 
 # test
-
+目的
+-develp branch で編集
 ## chapter01
 機能
 -特にない
