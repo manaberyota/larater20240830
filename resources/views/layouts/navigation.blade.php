@@ -27,6 +27,9 @@
                     <x-nav-link :href="route('profile.show', auth()->user())" :active="request()->routeIs('profile.show')">
                     {{ __('マイページ') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('recommenduser.index', auth()->user())" :active="request()->routeIs('recommenduser.index')">
+                    {{ __('話題のツイート')}}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -94,6 +97,9 @@
             <x-responsive-nav-link :href="route('profile.show', auth()->user())" :active="request()->routeIs('profile.show')">
             {{ __('マイページ') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('recommenduser.index',auth()->user())" :active="request()->routeIs('recommenduser.index')">
+            {{ __('フォロー一覧')}}
+            </x-responsive-nav-link>        
         </div>
 
         <!-- Responsive Settings Options -->

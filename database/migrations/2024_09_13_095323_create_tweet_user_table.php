@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->unique(['tweet_id', 'user_id']);
             $table->timestamps();
+            $table->foreignid('bad_id')->after('user_id')->constrained('users')->cascadeOnDelete();
         });
     }
 
@@ -25,6 +26,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tweet_user');
+        Schema::table('tweet_user', function (Blueprint $table) {
+        // 🔽 テーブル連携を削除 → カラム削除
+        $table->dropForeign('tweet_user_bad_id_foreign');
+        $table->dropColumn(['bad_id']);
+        });
     }
 };
